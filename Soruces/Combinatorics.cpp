@@ -1,5 +1,5 @@
-#define MOD 1000000007
-#define SIZE 300001
+#define MOD 1000000007 // MUST BE PRIME
+#define SIZE 300001 // MUST BE SMALLER THAN MOD
 ll fact[SIZE], invfact[SIZE];
 ll fexp(ll a, ll b) {
     ll res = 1;
@@ -9,7 +9,7 @@ ll fexp(ll a, ll b) {
     }
     return res;
 }
-void precompute() {
+void precompute() { // MUST INCLUDE IN MAIN
     fact[0] = 1;
     for (int i = 1; i < SIZE; i++) fact[i] = fact[i - 1] * i % MOD;
     for (int i = 0; i < SIZE; i++) invfact[i] = fexp(fact[i], MOD - 2);
